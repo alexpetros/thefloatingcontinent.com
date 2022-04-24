@@ -9,7 +9,7 @@ body {
     margin-left: 60px;
 }
 
-header h1, h2{
+header h1, header h2{
     margin: 0px;
 }
 
@@ -58,9 +58,19 @@ nav li {
     margin-bottom: 7px;
 }
 
-nav hr {
-    margin-right: 80%;
+hr {
     color: lightgray;
+}
+
+.external-profiles {
+    padding: 0px;
+    list-style-type: none;
+}
+
+.external-profiles li {
+    margin-left: 0px;
+    margin-bottom: 7px;
+    list-style-type: none;
 }
 
 @media only screen and (max-width: 800px) {
@@ -77,6 +87,5 @@ nav hr {
     .home > header {
         width: 100%;
     }
-
 }
 
