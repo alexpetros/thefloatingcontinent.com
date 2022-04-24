@@ -1,0 +1,82 @@
+html {
+    font-family: 'PT Sans', sans-serif;
+    color: black;
+}
+
+body {
+    margin-top: 50px;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+header h1, h2{
+    margin: 0px;
+}
+
+header p {
+    font-size: large;
+}
+
+h1, h2, h3, .author {
+    color: #498FE6;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: #498FE6;
+}
+
+a:visited {
+    color: black;
+}
+
+.home {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+.home > header {
+    width: 200px;
+    margin-right: 200px;
+}
+
+.home > main {
+}
+
+nav ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+nav li {
+    margin-bottom: 7px;
+}
+
+nav hr {
+    margin-right: 80%;
+    color: lightgray;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        margin-top: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home > header {
+        width: 100%;
+    }
+
+}
+
