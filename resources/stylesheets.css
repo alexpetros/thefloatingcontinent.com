@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
 html {
     font-family: 'PT Sans', sans-serif;
     color: black;
@@ -5,8 +7,8 @@ html {
 
 body {
     margin-top: 50px;
-    margin-right: 60px;
-    margin-left: 60px;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 header h1, header h2{
@@ -88,5 +90,11 @@ hr {
     .home > header {
         width: 100%;
     }
+
+    .home header li {
+        display: inline;
+        margin-right: 10px;
+    }
+
 }
 
