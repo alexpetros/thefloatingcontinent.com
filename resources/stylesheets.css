@@ -11,6 +11,15 @@ body {
     margin-left: 10%;
 }
 
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+hr {
+    color: lightgray;
+}
+
 header h1, header h2{
     margin: 0px;
 }
@@ -19,36 +28,8 @@ header p {
     font-size: large;
 }
 
-h1, h2, h3, .author {
-    color: #498FE6;
-}
-
-a {
-    color: black;
+header a {
     text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-    text-decoration-color: #498FE6;
-}
-
-a:visited {
-    color: black;
-}
-
-.home {
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-}
-
-.home > header {
-    width: 200px;
-    margin-right: 200px;
-}
-
-.home > main {
 }
 
 nav ul {
@@ -61,29 +42,86 @@ nav li {
     margin-bottom: 7px;
 }
 
-hr {
-    color: lightgray;
+
+h1, h2, h3, .author {
+    color: #498FE6;
 }
 
-.external-profiles {
+a {
+    color: black;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #498FE6;
+}
+
+a:hover {
+}
+
+a:visited {
+    color: black;
+}
+
+body.home {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+.home > header {
+    width: 200px;
+    margin-right: 100px;
+}
+
+.home > main {
+    width: 80%;
+}
+
+.home .blogs-list li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home .external-profiles {
     padding: 0px;
     list-style-type: none;
 }
 
-.external-profiles li {
+.home li {
     margin-left: 0px;
     margin-bottom: 7px;
     list-style-type: none;
 }
 
+body.blog {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.centered {
+    text-align: center;
+}
+
+.blog .book-title {
+    font-style: italic;
+}
+
+.blog .postscript {
+    font-style: italic;
+}
+
+.blog code {
+    background: lightgray;
+}
+
 @media only screen and (max-width: 800px) {
-    body {
+    body.home, body.blog {
         margin-top: 50px;
         margin-left: 20px;
         margin-right: 20px;
     }
 
-    .home {
+    body.home {
         flex-direction: column;
     }
 
@@ -94,6 +132,10 @@ hr {
     .home header li {
         display: inline;
         margin-right: 10px;
+    }
+
+    .home .blogs-list li {
+        flex-direction: column;
     }
 
 }

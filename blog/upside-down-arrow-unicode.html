@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>When the Down Arrow is not an Upside-Down Up Arrow - The Floating Continent</title>
+    <link rel="stylesheet" href="../resources/stylesheets.css">
+</head>
+<body class="blog">
+    <header class="basic">
+        <a href="/">^Home</a>
+    </header>
+    <main>
+        <article>
+            <h1>When the Down Arrow is not an Upside-Down Up Arrow</h1>
+            <p>First posts are hard, so I'll start small. Here's two arrows:</p>
+            <p>&#x21E7; &#x21E9;</p>
+
+            <p>If you're on reading this on a relatively recent smartphone, chances are you see two reflected, but otherwise identical arrows. One points up and the other points down. On MacOS (Big Sur 11.6), however, the up arrow is much squatter than the one pointing down. This is a photo of how it renders on my MacBook Pro:</p>
+
+            <img src="../resources/blog/two-arrows.png" alt="A screenshot of two arrows, a thick one pointing up, and a comparitively skinnier one pointing down.">
+
+            <p>Alex, those are two different arrows. Well yes, in the sense that one is up and the other is down, but they should be otherwise identical. I input two Unicode characters, "Upwards White Arrow" and "Downwards White Arrow", and I expected (reasonably, I think) that the down arrow would have the same proportions as the up arrow, only pointing down. So what's going on here?</p>
+
+            <p>Let's start with the basics. Unicode, if you've never never had to think about it before, is the international standard for representing text in computer software. When rendering text, your computer reads a series of Unicode "code points" and then turns those into the glyphs specified by your font. In Latin script, every character you type has a corresponding hexadecimal number—a code point—that gets saved in the computer's memory when you type it.</p>
+
+            <p>Because each character in the English alphabet is a single code point, representing English in Unicode is straightfoward. The uppercase letter "C" is code point <code>U+0043</code>, lowercase "r" is <code>U+0072</code>, and lowercase "o" is <code>U+006F</code>. Other code points include the semicolon (<code>U+003B</code>), the lowercase letter "w" (<code>U+0077</code>), and the percent symbol (<code>U+0025</code>). To display the text, the computer will read each code point and display whatever that sequence of code points should represent, in the chosen font. When I write "Crow", what I'm really writing is:</p>
+            <p class="centered">(<code>U+0043</code>)(<code>U+0072</code>)(<code>U+006F</code>)(<code>U+0077</code>)</p>
+            <p class="centered">(The code points have letters because they're written in <a href="https://en.wikipedia.org/wiki/Hexadecimal">heaxdecimal</a>; not important for our purposes.)</p>
+
+            <p>That's why you can easily change the font on a webpage or a document—your computer has all this text saved as code points, it only has to render them differently. Other languages, where multiple code points might combine to create a single character, are <a href="https://unicode.org/standard/where/">far more complex</a>, but operate under essentially the same principle: Unicode provides the code points, the computer translates that into text using a font.</p>
+
+            <p>Back to my messed-up arrows. The &#x21E7; is the "Upwards White Arrow" code point (<code>U+21E7</code>) and the &#x21E9; is "Downwards White Arrow" (<code>U+21E9</code>). If you're looking closely at those heaxdecimals, you'll see they're two numbers apart. In between them (<code>U+21E8</code>) is, you guessed it: &#x21E8;, the "Leftwards White Arrow."</p>
+
+            <p>Well maybe Unicode specifices that these arrows should look different for some reason, and I'm using them wrong. As with all open standards, you can simply go look up what Unicode says about these particular characters. You can <a href="https://www.unicode.org/charts/">search the whole standard</a> by code point! Which is how I ended up with a PDF of <a href"https://www.unicode.org/charts/PDF/U2190.pdf">Unicode characters 2190-21FF</a> (8592-8703 in decimal), a subset of the standard appropriately titled <em>Arrows</em>:</p>
+
+            <p class="centered"><img src="../resources/blog/many-arrows.png" alt="A screenshot of many different types of arrows in the unicode standards chart."/></p>
+
+            <p>That's a lot of arrows! But wait... compututer, enhance!</p>
+
+            <p class="centered"><img src="../resources/blog/upwards-arrows.png" alt="A screenshot of the four white arrows in the Unicode standard, which all look like rotated versions of the same arrow." height="400px"/></p>
+
+            <p>Those are the arrows I want! They all look the same! If the Unicode standard suggests they should be the same, why don't my arrows do that? One <a href="https://stackoverflow.com/questions/42966871/unicode-different-size-arrows">StackOverflow answer</a> for a different set of arrows suggests that the Lucia Grande font (MacOS default) might render the arrows differently. This could have been the case for those arrows, but it would also be a weird thing for a font to do. All these arrows live right next to each other on the standard; there aren't a lot of good reasons to render one of a set differently.</p>
+
+            <p>The answer is that the Lucia Grande font does not render the other arrows <em> at all</em>, it only renders the Upwards White Arrow. The other arrows are rendered in an entirely different font, a fallback font called STIXGeneral. You can see this by inspecting the following line in your browser's Dev Tools:</p>
+            <p>&#x21E7;&#x21E9;</p>
+
+            <p>On MacOS you should see something like this (I'm using Firefox):</p>
+
+            <img src="../resources/blog/arrow-fonts.png" alt="A screenshot of the Firefox dev tools, showing three separate fonts." />
+
+            <p>PT Sans is the font used on this website, but it doesn't have either of the arrows, so Firefox looks to my system font, Lucia Grande, and renders the Upwards White Arrow using it. Then, seeing that neither of those two fonts supports the Downwards White Arrow, it switches to a more comprehensive fallback font called STIXGeneral to display the character.</p>
+
+            <p>Why render just one of the arrows? According to <a href="https://www.unicode.org/consortium/cjkunihan.html">Unicode CJK & Unihan group</a> chair and Apple Font Developer Dr. Ken Lunde, some fonts <a href="https://twitter.com/ken_lunde/status/1519156303079215109?s=20&t=UwwcIQaGqPhz24D8PiQkPg">implemented just the Upwards White Arrow</a> because it is present in many Traditional Chinese fonts via a different, non-Unicode encoding called <a href="https://en.wikipedia.org/wiki/Big5#ETEN_extensions">Big5</a>. Lucia Grande presumably supported Big5 encoding, and the Upwards White Arrow glpyh was later mapped to its unicode representation, once the "Arrows" set came out later. The creators of that font never actually specifically looked at the "Arrows" set and said "we'll support this, but only the up arrow;" they simply re-used the characters that they had ready to go, to support what they could.</p>
+
+            <p>There is a platform-independent solution though, one that renders properly no matter what fonts are installed, as long as they have the Upwards White Arrow. I used this little trick to <a href="https://areyoutheasshole.com/">mimic the Reddit upvote arrow</a> recently. See if you can figure it out.</p>
+
+            <p >&#x21E7;<span style="display: inline-block; transform: rotate(-180deg);">&#x21E7;</span></p>
+
+            <p>Have fun!</p>
+
+            <p class="postscript">Enormous thanks to Twitter users @ken_lunde, @fake_unicode, and @litherum for finding my tweet and tagging various experts to help me <a href="https://twitter.com/ken_lunde/status/1519290738189557760?s=20&t=HvXN2NHCOn2tFhjrnCzSzA">explore the issue</a>. If you read this post and would like to be credited by name and bio, let me know..</p>
+
+            <h2>Further reading</h2>
+            <ul>
+                <li>
+                    <span class="book-title">The Rust Programming Language</span> has a very good explanation of how they model the complexities of UTF-8, and graphemes in particular: <a href="https://doc.rust-lang.org/book/ch08-02-strings.html#bytes-and-scalar-values-and-grapheme-clusters-oh-my">Storing UTF-8 Encoded Text with Strings</a>
+                </li>
+                <li>
+                    This blog sent me down an absolute rabbit hole of stuff I did not know about strings: <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">"The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)"</a>
+                </li>
+                <li>
+                    The aforementioned <a href="https://stackoverflow.com/questions/42966871/unicode-different-size-arrows">StackOverflow answer</a> has the funniest gaslighting I've ever seen on StackOverflow, from a commenter who just says: "I think it is an optical illusion."
+                </li>
+            </ul>
+        </article>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
