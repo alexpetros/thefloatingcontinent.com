@@ -28,10 +28,6 @@ header p {
     font-size: large;
 }
 
-header a {
-    text-decoration: none;
-}
-
 nav ul {
     margin: 0px;
     padding: 0px;
@@ -54,9 +50,6 @@ a {
     text-decoration-color: #498FE6;
 }
 
-a:hover {
-}
-
 a:visited {
     color: black;
 }
@@ -76,13 +69,24 @@ body.home {
     width: 80%;
 }
 
+.home a {
+    text-decoration: none;
+}
+
+.home a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #498FE6;
+}
+
 .home .blogs-list li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.home .external-profiles {
+.home ul {
     padding: 0px;
     list-style-type: none;
 }
