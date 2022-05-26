@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="../resources/stylesheets.css">
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://thefloatingcontinent.com/blog/upside-down-arrow-unicode.html" />
+    <meta property="twitter:url" content="https://thefloatingcontinent.com/posts/upside-down-arrow-unicode.html" />
     <meta property="twitter:title" content="When the Down Arrow is not an Upside-Down Up Arrow" />
     <meta property="twitter:description" content="A little investigation into the Unicode standard." />
-    <meta property="twitter:image" content="https://thefloatingcontinent.com/resources/blog/two-arrows.png" />
+    <meta property="twitter:image" content="https://thefloatingcontinent.com/resources/posts/two-arrows.png" />
 
 </head>
 <body class="blog">
@@ -24,7 +24,7 @@
 
             <p>If you're on reading this on a relatively recent smartphone, chances are you see two reflected, but otherwise identical arrows. One points up and the other points down. On MacOS (Big Sur 11.6), however, the up arrow is much squatter than the one pointing down. This is a photo of how it renders on my MacBook Pro:</p>
 
-            <img src="../resources/blog/two-arrows.png" alt="A screenshot of two arrows, a thick one pointing up, and a comparitively skinnier one pointing down.">
+            <img src="../resources/posts/two-arrows.png" alt="A screenshot of two arrows, a thick one pointing up, and a comparitively skinnier one pointing down.">
 
             <p>Alex, those are two different arrows. Well yes, in the sense that one is up and the other is down, but they should be otherwise identical. I input two Unicode characters, "Upwards White Arrow" and "Downwards White Arrow", and I expected (reasonably, I think) that the down arrow would have the same proportions as the up arrow, only pointing down. So what's going on here?</p>
 
@@ -40,11 +40,11 @@
 
             <p>Well maybe Unicode specifices that these arrows should look different for some reason, and I'm using them wrong. As with all open standards, you can simply go look up what Unicode says about these particular characters. You can <a href="https://www.unicode.org/charts/">search the whole standard</a> by code point! Which is how I ended up with a PDF of <a href"https://www.unicode.org/charts/PDF/U2190.pdf">Unicode characters 2190-21FF</a> (8592-8703 in decimal), a subset of the standard appropriately titled <em>Arrows</em>:</p>
 
-            <p class="centered"><img src="../resources/blog/many-arrows.png" alt="A screenshot of many different types of arrows in the unicode standards chart."/></p>
+            <p class="centered"><img src="../resources/posts/many-arrows.png" alt="A screenshot of many different types of arrows in the unicode standards chart."/></p>
 
             <p>That's a lot of arrows! But wait... compututer, enhance!</p>
 
-            <p class="centered"><img src="../resources/blog/upwards-arrows.png" alt="A screenshot of the four white arrows in the Unicode standard, which all look like rotated versions of the same arrow." height="400px"/></p>
+            <p class="centered"><img src="../resources/posts/upwards-arrows.png" alt="A screenshot of the four white arrows in the Unicode standard, which all look like rotated versions of the same arrow." height="400px"/></p>
 
             <p>Those are the arrows I want! They all look the same! If the Unicode standard suggests they should be the same, why don't my arrows do that? One <a href="https://stackoverflow.com/questions/42966871/unicode-different-size-arrows">StackOverflow answer</a> for a different set of arrows suggests that the Lucia Grande font (MacOS default) might render the arrows differently. This could have been the case for those arrows, but it would also be a weird thing for a font to do. All these arrows live right next to each other on the standard; there aren't a lot of good reasons to render one of a set differently.</p>
 
@@ -53,7 +53,7 @@
 
             <p>On MacOS you should see something like this (I'm using Firefox):</p>
 
-            <img src="../resources/blog/arrow-fonts.png" alt="A screenshot of the Firefox dev tools, showing three separate fonts." />
+            <img src="../resources/posts/arrow-fonts.png" alt="A screenshot of the Firefox dev tools, showing three separate fonts." />
 
             <p>PT Sans is the font used on this website, but it doesn't have either of the arrows, so Firefox looks to my system font, Lucia Grande, and renders the Upwards White Arrow using it. Then, seeing that neither of those two fonts supports the Downwards White Arrow, it switches to a more comprehensive fallback font called STIXGeneral to display the character.</p>
 
