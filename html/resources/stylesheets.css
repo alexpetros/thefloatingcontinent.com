@@ -119,10 +119,10 @@ body.blog {
 }
 
 @media only screen and (max-width: 800px) {
-    body.home, body.blog {
+    body {
         margin-top: 50px;
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     body.home {
