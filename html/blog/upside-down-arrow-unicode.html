@@ -8,6 +8,7 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@goodtweetsalex" />
     <meta property="twitter:url" content="https://thefloatingcontinent.com/blog/upside-down-arrow-unicode" />
     <meta property="twitter:title" content="When the Down Arrow is not an Upside-Down Up Arrow" />
     <meta property="twitter:description" content="A little investigation into the Unicode standard." />
@@ -59,7 +60,7 @@
 
             <p>PT Sans is the font used on this website, but it doesn't have either of the arrows, so Firefox looks to my system font, Lucia Grande, and renders the Upwards White Arrow using it. Then, seeing that neither of those two fonts supports the Downwards White Arrow, it switches to a more comprehensive fallback font called STIXGeneral to display the character.</p>
 
-            <p>Why render just one of the arrows? According to <a href="https://www.unicode.org/consortium/cjkunihan.html">Unicode CJK & Unihan group</a> chair and Apple Font Developer Dr. Ken Lunde, some fonts <a href="https://twitter.com/ken_lunde/status/1519156303079215109?s=20&t=UwwcIQaGqPhz24D8PiQkPg">implemented just the Upwards White Arrow</a> because it is present in many Traditional Chinese fonts via a different, non-Unicode encoding called <a href="https://en.wikipedia.org/wiki/Big5#ETEN_extensions">Big5</a>. Lucia Grande presumably supported Big5 encoding, and the Upwards White Arrow glpyh was later mapped to its unicode representation, once the "Arrows" set came out later. The creators of that font never actually specifically looked at the "Arrows" set and said "we'll support this, but only the up arrow;" they simply re-used the characters that they had ready to go, to support what they could.</p>
+            <p>Why render just one of the arrows? According to <a href="https://www.unicode.org/consortium/cjkunihan.html">Unicode CJK & Unihan group</a> chair and Apple Font Developer Dr. Ken Lunde, some fonts <a href="https://twitter.com/ken_lunde/status/1519156303079215109?s=20&t=UwwcIQaGqPhz24D8PiQkPg">implemented just the Upwards White Arrow</a> because it is present in many Traditional Chinese fonts via a different, non-Unicode encoding called <a href="https://en.wikipedia.org/wiki/Big5#ETEN_extensions">Big5</a>. Lucia Grande presumably supported Big5 encoding, and the Upwards White Arrow glpyh was later mapped to its unicode representation, once the "Arrows" set came out. The creators of that font never actually specifically looked at the "Arrows" set and said "we'll support this, but only the up arrow;" they simply re-used the characters that they had ready to go, to support what they could.</p>
 
             <p>There is a platform-independent solution though, one that renders properly no matter what fonts are installed, as long as they have the Upwards White Arrow. I used this little trick to <a href="https://areyoutheasshole.com/">mimic the Reddit upvote arrow</a> recently. See if you can figure it out.</p>
 
