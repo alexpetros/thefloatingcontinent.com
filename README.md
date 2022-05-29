@@ -1,4 +1,5 @@
 # The Floating Continent
 My website. You can find it at www.thefloatingcontinent.com.
 
-Currently embracing the messed up directory stucture in order to not have `.html` at the end of the routes. When I host it myself I'll fix that.
+## Testing
+I test it with `npx serve`, which is part of the NodeJS toolchain. It's just static files, but your server has to be willing to serve `/example.html` files at `/example`, which a surprising number of servers are relucatant to do!

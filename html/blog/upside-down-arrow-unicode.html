@@ -49,18 +49,18 @@
 
             <p class="centered"><img src="/resources/blog/upwards-arrows.png" alt="A screenshot of the four white arrows in the Unicode standard, which all look like rotated versions of the same arrow." height="400px"/></p>
 
-            <p>Those are the arrows I want! They all look the same! If the Unicode standard suggests they should be the same, why don't my arrows do that? One <a href="https://stackoverflow.com/questions/42966871/unicode-different-size-arrows">StackOverflow answer</a> for a different set of arrows posits that the Lucia Grande font (MacOS default) might render the arrows differently. This could have been the case for those arrows, but it would also be a weird thing for a font to do. All these arrows live right next to each other on the standard; there aren't a lot of good reasons to render one of a set differently.</p>
+            <p>Those are the arrows I want! They all look the same! If the Unicode standard suggests they should be the same, why don't my arrows do that? One <a href="https://stackoverflow.com/questions/42966871/unicode-different-size-arrows">StackOverflow answer</a> for a different set of arrows posits that the Lucida Grande font (MacOS default) might render the arrows differently. This could have been the case for those arrows, but it would also be a weird thing for a font to do. All these arrows live right next to each other on the standard; there aren't a lot of good reasons to render one of a set differently.</p>
 
-            <p>The answer is that the Lucia Grande font does not render the other arrows <em> at all</em>, it only renders the Upwards White Arrow. The other arrows are rendered in an entirely different font, a fallback font called STIXGeneral. You can see this by inspecting the following line in your browser's Dev Tools:</p>
+            <p>The answer is that the Lucida Grande font does not render the other arrows <em> at all</em>, it only renders the Upwards White Arrow. The other arrows are rendered in an entirely different font, a fallback font called STIXGeneral. You can see this by inspecting the following line in your browser's Dev Tools:</p>
             <p>&#x21E7;&#x21E9;</p>
 
             <p>Depending on your browser (I'm using Firefox) and OS, you might see something like this:</p>
 
             <img src="/resources/blog/arrow-fonts.png" alt="A screenshot of the Firefox dev tools, showing three separate fonts." />
 
-            <p>PT Sans is the font used on this website, but it doesn't have either of the arrows, so Firefox looks to my system font, Lucia Grande, and renders the Upwards White Arrow using it. Then, seeing that neither of those two fonts supports the Downwards White Arrow, it switches to a more comprehensive fallback font called STIXGeneral to display the character.</p>
+            <p>PT Sans is the font used on this website, but it doesn't have either of the arrows, so Firefox looks to my system font, Lucida Grande, and renders the Upwards White Arrow using it. Then, seeing that neither of those two fonts supports the Downwards White Arrow, it switches to a more comprehensive fallback font called STIXGeneral to display the character.</p>
 
-            <p>Why render just one of the arrows? According to <a href="https://www.unicode.org/consortium/cjkunihan.html">Unicode CJK & Unihan group</a> chair and Apple Font Developer Dr. Ken Lunde, some fonts <a href="https://twitter.com/ken_lunde/status/1519156303079215109?s=20&t=UwwcIQaGqPhz24D8PiQkPg">implemented just the Upwards White Arrow</a> because it is present in many Traditional Chinese fonts via a different, non-Unicode encoding called <a href="https://en.wikipedia.org/wiki/Big5#ETEN_extensions">Big5</a>. Lucia Grande presumably supported Big5 encoding, and the Upwards White Arrow glpyh was later mapped to its unicode representation, once the "Arrows" set came out. The creators of that font never actually specifically looked at the "Arrows" set and said "we'll support this, but only the up arrow;" they simply re-used the characters that they had ready to go, to support what they could.</p>
+            <p>Why render just one of the arrows? According to <a href="https://www.unicode.org/consortium/cjkunihan.html">Unicode CJK & Unihan group</a> chair and Apple Font Developer Dr. Ken Lunde, some fonts <a href="https://twitter.com/ken_lunde/status/1519156303079215109?s=20&t=UwwcIQaGqPhz24D8PiQkPg">implemented just the Upwards White Arrow</a> because it is present in many Traditional Chinese fonts via a different, non-Unicode encoding called <a href="https://en.wikipedia.org/wiki/Big5#ETEN_extensions">Big5</a>. Lucida Grande presumably supported Big5 encoding, and the Upwards White Arrow glpyh was later mapped to its unicode representation, once the "Arrows" set came out. The creators of that font never actually specifically looked at the "Arrows" set and said "we'll support this, but only the up arrow;" they simply re-used the characters that they had ready to go, to support what they could.</p>
 
             <p>There is a platform-independent solution though, one that renders properly no matter what fonts are installed, as long as they have the Upwards White Arrow. I used this little trick to <a href="https://areyoutheasshole.com/">mimic the Reddit upvote arrow</a> recently. See if you can figure it out.</p>
 
@@ -69,6 +69,8 @@
             <p>Have fun!</p>
 
             <p class="postscript">Enormous thanks to Twitter users @ken_lunde, @fake_unicode, and @litherum for finding my tweet and tagging various experts to help me <a href="https://twitter.com/ken_lunde/status/1519290738189557760?s=20&t=HvXN2NHCOn2tFhjrnCzSzA">explore the issue</a>. If you read this post and would like to be credited by name and bio, let me know.</p>
+
+            <p class="postscript"><strong>Update 1:</strong> Some commentors have pointed out that it's possible the Upwards White Arrow glyph originally represented <a href="https://twitter.com/FakeUnicode/status/1530025797645283328?s=20&t=puvJXln7we54UJlAJIrw8A">the shift key</a>, instead of CJK characters. If you were involved in the creation of the Lucida Grande font and know where it came from, contact me!</p>
 
             <h2>Further reading</h2>
             <ul>
