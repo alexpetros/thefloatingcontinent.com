@@ -34,8 +34,9 @@ One points up and the other points down.
 On MacOS (Big Sur 11.6), however, the up arrow is much squatter than the one pointing down.
 This is a photo of how it renders on my MacBook Pro:
 
-<p class="centered">
+<figure>
 <img src="/resources/blog/two-arrows.png" alt="A screenshot of two arrows, a thick one pointing up, and a comparitively skinnier one pointing down.">
+</figure>
 
 <p>
 Alex, those are two different arrows.
@@ -56,8 +57,10 @@ Other code points include the semicolon (<code>U+003B</code>), the lowercase let
 To display the text, the computer will read each code point and display whatever that sequence of code points should represent, in the chosen font.
 When I write "Crow", what I'm really writing is:
 
-<p class="centered">(<code>U+0043</code>)(<code>U+0072</code>)(<code>U+006F</code>)(<code>U+0077</code>)
-<p class="centered">(The code points have letters because they're written in <a href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</a>; not important for our purposes.)
+<figure>
+<p>(<code>U+0043</code>)(<code>U+0072</code>)(<code>U+006F</code>)(<code>U+0077</code>)
+<figcaption>(The code points have letters because they're written in <a href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</a>; not important for our purposes.)</figcaption>
+</figure>
 
 <p>
 That's why you can easily change the font on a webpage or a document—your computer has all this text saved as code points, it only has to render them differently.
@@ -75,13 +78,17 @@ As with all open standards, you can simply go look up the definition.
 The Unicode consortium has a webpage where you can <a href="https://www.unicode.org/charts/">search
 	the whole standard</a> by code point! Which is how I ended up with a PDF of <a href="https://www.unicode.org/charts/PDF/U2190.pdf">Unicode characters 2190-21FF</a> (8592-8703 in decimal), a subset of the standard appropriately titled <em>Arrows</em>:
 
-<p class="centered"><img src="/resources/blog/many-arrows.png" alt="A screenshot of many different types of arrows in the unicode standards chart."/>
+<figure>
+<img src="/resources/blog/many-arrows.png" alt="A screenshot of many different types of arrows in the unicode standards chart."/>
+</figure>
 
 <p>
 That's a lot of arrows! But wait...
 compututer, enhance!
 
-<p class="centered"><img src="/resources/blog/upwards-arrows.png" alt="A screenshot of the four white arrows in the Unicode standard, which all look like rotated versions of the same arrow." height=400>
+<figure>
+<img src="/resources/blog/upwards-arrows.png" alt="A screenshot of the four white arrows in the Unicode standard, which all look like rotated versions of the same arrow." height=400>
+</figure>
 
 <p>
 Those are the arrows I want! They all look the same! If the Unicode standard suggests they should be the same, why don't my arrows do that? One <a href="https://stackoverflow.com/questions/42966871/unicode-different-size-arrows">StackOverflow answer</a> for a different set of arrows posits that the Lucida Grande font (MacOS default) might render the arrows differently.
@@ -98,7 +105,9 @@ You can see this by inspecting the following line in your browser's Dev Tools:
 <p>
 Depending on your browser (I'm using Firefox) and OS, you might see something like this:
 
+<figure>
 <img src="/resources/blog/arrow-fonts.png" alt="A screenshot of the Firefox dev tools, showing three separate fonts." />
+</figure>
 
 <p>
 PT Sans is the font used on this website, but it doesn't have either of the arrows, so Firefox looks to my system font, Lucida Grande, and renders the Upwards White Arrow using it.
@@ -114,7 +123,7 @@ There is a platform-independent solution though, one that renders properly no ma
 I used this little trick to <a href="https://areyoutheasshole.com/">mimic the Reddit upvote arrow</a> recently.
 Try inspecting the element below:
 
-<p >&#x21E7;<span style="display: inline-block; transform: rotate(-180deg);">&#x21E7;</span>
+<p>&#x21E7;<span style="display: inline-block; transform: rotate(-180deg);">&#x21E7;</span>
 
 <p>
 Have fun!
@@ -127,9 +136,12 @@ If you were involved in the creation of the Lucida Grande font and know where it
 
 <h2>Further reading</h2>
 <ul>
-<li><span class="book-title">The Rust Programming Language</span> has a very good explanation of how they model the complexities of UTF-8, and graphemes in particular: <a href="https://doc.rust-lang.org/book/ch08-02-strings.html#bytes-and-scalar-values-and-grapheme-clusters-oh-my">Storing UTF-8 Encoded Text with Strings</a>
-<li>This blog sent me down an absolute rabbit hole of stuff I did not know about strings: <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">"The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)"</a>
-<li>The aforementioned <a href="https://stackoverflow.com/questions/42966871/unicode-different-size-arrows">StackOverflow answer</a> has the funniest gaslighting I've ever seen on StackOverflow, from a commenter who just says: "I think it is an optical illusion."
+<li>
+	<span class="book-title">The Rust Programming Language</span> has a very good explanation of how they model the complexities of UTF-8, and graphemes in particular: <a href="https://doc.rust-lang.org/book/ch08-02-strings.html#bytes-and-scalar-values-and-grapheme-clusters-oh-my">Storing UTF-8 Encoded Text with Strings</a>
+<li>
+	This blog sent me down an absolute rabbit hole of stuff I did not know about strings: <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">"The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)"</a>
+<li>
+	The aforementioned <a href="https://stackoverflow.com/questions/42966871/unicode-different-size-arrows">StackOverflow answer</a> has the funniest gaslighting I've ever seen on StackOverflow, from a commenter who just says: "I think it is an optical illusion."
 </ul>
 
 </article>
