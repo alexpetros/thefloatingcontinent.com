@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('/resources/fonts/OpenSans-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 html {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'open_sansregular', sans-serif;
     color: black;
 }
 
@@ -98,8 +103,8 @@ body.home {
 }
 
 body.blog {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin: 0 auto;
+		max-width: 760px;
 }
 
 figure {
