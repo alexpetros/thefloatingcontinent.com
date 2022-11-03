@@ -124,6 +124,15 @@ figure {
     background: lightgray;
 }
 
+.blog figcaption {
+  font-size: .85em;
+  color: gray;
+}
+
+.blog figcaption a {
+  color: gray;
+}
+
 @media only screen and (max-width: 800px) {
     body, body.main, body.blog {
         margin-top: 50px;
