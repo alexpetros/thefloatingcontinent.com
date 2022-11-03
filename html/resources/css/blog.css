@@ -1,0 +1,42 @@
+body {
+    margin: 0 auto;
+		max-width: 760px;
+}
+
+figure {
+    text-align: center;
+}
+
+code {
+    background: lightgray;
+}
+
+figcaption {
+  font-size: .85em;
+  color: gray;
+}
+
+figcaption a {
+  color: gray;
+}
+
+.author {
+    color: #498FE6;
+}
+
+.book-title {
+    font-style: italic;
+}
+
+.postscript {
+    font-style: italic;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        margin-top: 50px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
