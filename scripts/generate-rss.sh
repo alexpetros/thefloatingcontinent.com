@@ -42,17 +42,20 @@ sortedFilenames=$(echo "$filenames" | sort -nr | cut -d ' ' -f 2)
 # For each file (now sorted reverse chronologically), build the item element
 for post in $sortedFilenames; do
   title=$(grep 'h1' "$post" | head -1 | sed -E 's/<\/?h1>//g')
-  filename=$(basename $post)
+  filename=$(basename "$post")
   slug=${filename%.html}
   url="$DOMAIN/blog/$slug"
+  content=$(awk -f ./scripts/get-article-content.awk -v url="$url" "$post")
   pubdate=$(grep pubdate "$post" | sed -E 's/.*datetime="([^"]*)".*/\1/')
   fulldate="$(date -jf "%Y-%m-%d" $pubdate "+%a, %d %b %Y") 10:00:00 -0500"
+
   cat <<EOF
     <item>
       <title>$title</title>
       <link>$url</link>
       <guid>$url</guid>
       <pubDate>$fulldate</pubDate>
+      <content>$content</content>
     </item>
 EOF
 done
