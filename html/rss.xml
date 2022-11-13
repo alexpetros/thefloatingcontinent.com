@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Floating Continent</title>
+    <link>https://thefloatingcontinent.com</link>
+    <atom:link href="https://thefloatingcontinent.com/rss.xml" rel="self" type="application/rss+xml" />
+    <description>The personal website and blog of Alexander Petros</description>
+    <lastBuildDate>Sun, 13 Nov 2022 16:12:50 -0500</lastBuildDate>
+    <language>en-us</language>
+    <item>
+      <title>death-of-the-social-network.html</title>
+      <link>https://thefloatingcontinent.com/blog/death-of-the-social-network</link>
+      <guid>https://thefloatingcontinent.com/blog/death-of-the-social-network</guid>
+      <pubDate>Fri, 04 Nov 2022 10:00:00 -0500</pubDate>
+    </item>
+    <item>
+      <title>ai-art-generator-cheapness.html</title>
+      <link>https://thefloatingcontinent.com/blog/ai-art-generator-cheapness</link>
+      <guid>https://thefloatingcontinent.com/blog/ai-art-generator-cheapness</guid>
+      <pubDate>Fri, 16 Sep 2022 10:00:00 -0500</pubDate>
+    </item>
+    <item>
+      <title>upside-down-arrow-unicode.html</title>
+      <link>https://thefloatingcontinent.com/blog/upside-down-arrow-unicode</link>
+      <guid>https://thefloatingcontinent.com/blog/upside-down-arrow-unicode</guid>
+      <pubDate>Wed, 25 May 2022 10:00:00 -0500</pubDate>
+    </item>
+  </channel>
+</rss>
