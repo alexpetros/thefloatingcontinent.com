@@ -55,7 +55,7 @@ for post in $sortedFilenames; do
       <link>$url</link>
       <guid>$url</guid>
       <pubDate>$fulldate</pubDate>
-      <content>$content</content>
+      <content type="html">$content</content>
     </item>
 EOF
 done
