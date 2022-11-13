@@ -1,4 +1,16 @@
 #!/bin/bash
+#
+# Name: generate-rss.sh
+# Author: Alexander Petros
+# Description: Output an RSS feed based on the HTML files in the blog directory
+#
+# This will create a valid RSS feed by parsing the HTML files that comprise the
+# blog. Obvious there is some stuff specific to my directory structure that is
+# baked in here, but the main assumptions are:
+#   a) It uses the MacOS flavor of the `date` command
+#   b) It a `time` element with the "pubdate" class in format "YYYY-MM-DD"
+# Everything else is pretty standard. RSS is... really simple!
+
 set -eu
 
 DOMAIN="https://thefloatingcontinent.com"
