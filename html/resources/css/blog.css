@@ -1,14 +1,18 @@
 body {
-    margin: 0 auto;
-		max-width: 760px;
+  margin: 0 auto;
+  max-width: 760px;
+}
+
+h1 {
+  margin-bottom: 0;
 }
 
 figure {
-    text-align: center;
+  text-align: center;
 }
 
 code {
-    background: lightgray;
+  background: lightgray;
 }
 
 figcaption {
@@ -39,26 +43,28 @@ blockquote:before {
 }
 
 blockquote p {
-    display: inline;
+  display: inline;
 }
 
 .author {
-    color: #498FE6;
+  color: #498FE6;
 }
 
-.book-title {
-    font-style: italic;
+.subhead {
+  font-style: italic;
+  margin-top: 5px;
+  color: #498FE6;
 }
 
-.postscript {
-    font-style: italic;
+.book-title, .postscript,  {
+  font-style: italic;
 }
 
 @media only screen and (max-width: 800px) {
-    body {
-        margin-top: 50px;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
+  body {
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 
