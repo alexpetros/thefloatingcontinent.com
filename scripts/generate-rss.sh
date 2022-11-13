@@ -2,16 +2,17 @@
 set -eu
 
 DOMAIN="https://thefloatingcontinent.com"
-BUILDATE=$(date -I date)
+BUILDATE=$(date -R)
 
 # Build the top-level XML elements
 cat <<EOF
 <?xml version="1.0" encoding="utf-8"?>
 
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>The Floating Continent</title>
-    <link>https://thefloatingcontinent.com</link>
+    <link>$DOMAIN</link>
+    <atom:link href="$DOMAIN/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal website and blog of Alexander Petros</description>
     <lastBuildDate>$BUILDATE</lastBuildDate>
     <language>en-us</language>
@@ -20,8 +21,8 @@ EOF
 # Sort the filenames based on the post's publication date element
 filenames=""
 for post in ./html/blog/*.html; do
-  date=$(grep pubdate "$post" | sed -E 's/.*datetime="([^"]*)".*/\1/')
-  printf -v filenames "$filenames\n$date $post"
+  pubdate=$(grep pubdate "$post" | sed -E 's/.*datetime="([^"]*)".*/\1/')
+  printf -v filenames "$filenames\n$pubdate $post"
 done
 sortedFilenames=$(echo "$filenames" | sort -nr | cut -d ' ' -f 2)
 
@@ -30,13 +31,14 @@ for post in $sortedFilenames; do
   filename=$(basename $post)
   slug=${filename%.html}
   url="$DOMAIN/blog/$slug"
-  date=$(grep pubdate "$post" | sed -E 's/.*datetime="([^"]*)".*/\1/')
+  pubdate=$(grep pubdate "$post" | sed -E 's/.*datetime="([^"]*)".*/\1/')
+  fulldate="$(date -jf "%Y-%m-%d" $pubdate "+%a, %d %b %Y") 10:00:00 -0500"
   cat <<EOF
     <item>
       <title>$filename</title>
       <link>$url</link>
       <guid>$url</guid>
-      <pubdate>$date</pubdate>
+      <pubDate>$fulldate</pubDate>
     </item>
 EOF
 done
