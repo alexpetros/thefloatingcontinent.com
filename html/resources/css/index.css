@@ -13,6 +13,12 @@ body > main {
     width: 80%;
 }
 
+.logo {
+  height: 32px;
+  width: 32x;
+  margin: 5px;
+}
+
 body a {
     text-decoration: none;
 }
