@@ -1,9 +1,6 @@
 # End each print with a space instead of a newline
 BEGIN { ORS = " " }
 
-# Include the stylesheets
-/<link rel="stylesheet"/ { htmlEncodeAndPrint() }
-
 # Start counting and printing lines when the article starts
 articleStart { lines+=1; htmlEncodeAndPrint() }
 /<article>/ { articleStart = 1 }
