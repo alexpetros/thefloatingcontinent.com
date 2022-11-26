@@ -8,7 +8,6 @@ dev:
 validate:
 	vnu --skip-non-html --also-check-css html
 
-
 .PHONY: rss
 rss:
 	./scripts/generate-rss.sh > html/rss.xml

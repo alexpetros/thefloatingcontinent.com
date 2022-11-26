@@ -6,10 +6,10 @@ This website does not have a build step and I write all the HTML by hand.
 This is often annoying (I would prefer to inline my stylesheets, I have to copy and paste headers, etc.) but I think it's the right move for me for the foreseeable future, for a few reasons.
 
 HTML is designed to be written by hand.
-The tools that you use to write HTML will probably go out of date, but HTML shows no signs of doing the same, therefore reading documentation about HTML is likely a good investment of my time, while reading documentation about Jekyll or Hugo is not.
+Tools that compile to HTML will probably go out of date, but HTML shows no signs of doing the same, therefore reading documentation about HTML is likely a good investment of my time, while reading documentation about Jekyll or Hugo is not.
 I'm reasonably confident that this makes up for the time lost copying and pasting headers.
 
-Writing straight HTML requires you to write _good_ HTML, in order to make the copying and pasting less onerous.
+Writing HTML by hand requires you to write _good_ HTML, in order to make the copying and pasting less onerous.
 It requires more thought about the proper use of sematics, stylesheets, and so on.
 This is probably not how I would build a website for a company, but it does teach good habits for using more powerful tools.
 Markdown is fine, but the better you get at HTML, the more you appreciate the flexibility it affords.
