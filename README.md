@@ -24,6 +24,9 @@ I serve the website locally with `serve`, which is part of the NodeJS toolchain.
 It's just static files, but your server has to be willing to serve `/example.html` files at `/example`, which a surprising number of servers are reluctant to do!
 You can install serve with `npm install -g serve`, and then the `make` command will serve the website.
 
+`make validate` runs the HTML validator `vnu` against the `html` directory.
+This requires `vnu` to be installed.
+
 ## Deployment
 Link any static file server to the `html` directory to deploy the website.
 I use nginx, which requires a tiny config change to serve `.html` files without the file extension.
