@@ -11,10 +11,9 @@ html {
 }
 
 body {
-  margin-top: 50px;
-  margin-right: 10%;
-  margin-left: 10%;
-  padding-bottom: 10vh;
+  margin: 10px auto;
+  padding: 12px;
+  max-width: 900px;
 }
 
 img {
@@ -59,12 +58,3 @@ a {
 a:visited {
   color: black;
 }
-
-@media only screen and (max-width: 800px) {
-  body {
-    margin-top: 50px;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-}
-
