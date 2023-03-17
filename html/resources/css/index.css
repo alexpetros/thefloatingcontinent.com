@@ -45,10 +45,6 @@ h3 {
   color: darkgray;
 }
 
-#revue-form p {
-  font-size: 0.7em;
-}
-
 .logo {
   height: 32px;
   width: 32px;
@@ -63,5 +59,11 @@ h3 {
 }
 
 @media only screen and (min-width: 800px) {
+  .blog-list span {
+    float: right;
+  }
 
+  .blog-list h3 {
+    display: inline;
+  }
 }
