@@ -35,7 +35,7 @@ EOF
 filenames=""
 for post in ./html/blog/*.html; do
   pubdate=$(grep pubdate "$post" | sed -E 's/.*datetime="([^"]*)".*/\1/')
-  printf -v filenames "$filenames\n$pubdate $post"
+  printf -v filenames "%s\n%s %s" "$filenames" "$pubdate" "$post"
 done
 sortedFilenames=$(echo "$filenames" | sort -nr | cut -d ' ' -f 2)
 
@@ -47,7 +47,7 @@ for post in $sortedFilenames; do
   url="$DOMAIN/blog/$slug"
   content=$(awk -f ./scripts/get-article-content.awk -v url="$url" "$post")
   pubdate=$(grep pubdate "$post" | sed -E 's/.*datetime="([^"]*)".*/\1/')
-  fulldate="$(date -jf "%Y-%m-%d" $pubdate "+%a, %d %b %Y") 10:00:00 -0500"
+  fulldate="$(date -jf "%Y-%m-%d" "$pubdate" "+%a, %d %b %Y") 10:00:00 -0500"
 
   cat <<EOF
     <item>

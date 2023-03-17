@@ -20,7 +20,7 @@ There might come a time when I implement a templating mechanism of some sort, bu
 Writing an RSS generator in bash/awk is fun!
 
 ## Development
-I serve the website locally with `serve`, which is part of the NodeJS toolchain.
+I serve the website locally with `serve`, which can be installed with `npm install -g server`
 It's just static files, but your server has to be willing to serve `/example.html` files at `/example`, which a surprising number of servers are reluctant to do!
 You can install serve with `npm install -g serve`, and then the `make` command will serve the website.
 
