@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Ouroboros of Bullshit</title>
+<link rel="stylesheet" href="/resources/css/common.css">
+<link rel="stylesheet" href="/resources/css/blog.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@goodtweetsalex">
+<meta property="twitter:url" content="https://thefloatingcontinent.com/blog/llm-bullshit">
+<meta property="twitter:title" content="Ouroboros of Bullshit">
+<!-- <meta property="twitter:description" content=""> -->
+<!-- <meta property="twitter:image" content="https://thefloatingcontinent.com/resources/blog/alex-facebook-past-events-cropped.png"> -->
+
+<header class=basic>
+<a href="/">^Home</a>
+</header>
+
+<article>
+<h1 id="ouroboros-of-bullshit">Ouroboros of Bullshit</h1>
+<p class=pubdate><time datetime="2023-03-22">March 22, 2023</time>
+
+<p>On Epistemology Ex Machina, and why facts without context are no facts
+at all.
+
+<h2 id="bullshit">Bullshit</h2>
+
+<p>If you've been living under a rock, and are somehow unaware of ChatGPT,
+Bing's <q>Sydney,</q> and large language models (LLMs), please let me know whether
+there are any vacancies in your rock. I'm tired of hearing about them.
+
+<p>I don't hate large language models, not really. My first, and to date only,
+<a
+    href="https://www.theverge.com/2022/4/20/23033694/are-you-the-asshole-ai-reddit-clone-art-project-ethics-aita">viral
+    internet moment</a>
+involves a fun application of them. But I do hate bullshit—a form of dishonesty
+that harbors no malice towards the truth, merely a cheap indifference that
+makes its mass production more economical—and LLMs are the greatest bullshit
+generators of our time. Bullshit from the people who make them, bullshit from
+the people who promote them, and bullshit from the models themselves.
+
+<p>Before we wade too deep into the definition of bullshit—and I'm sorry that
+this blog is going to say <q>bullshit</q> so many times, but it really is the most
+precise word—let me provide you with a concrete example. You know how Gmail
+will turn <q>Okay</q> into <q>Okay, that sounds great, see you tonight!</q> if you let
+it? That's what LLMs do at scale.  They take a basic idea you had and then pad
+it out with a bunch of extra stuff that looks like something a human might have
+written. Sometimes it's very impressive. But it's still bullshit.
+
+<figure>
+<img style="max-height:400px"
+src="/resources/blog/harry-frankfurt.jpg"
+alt="A man with white hair and beard sitting in front of a microphone.">
+<figcaption>Professor Harry Frankfurt seems like a delightful hang, honestly (via <a href="https://commons.wikimedia.org/w/index.php?title=File:Harry_Frankfurt_at_2017_ACLS_Annual_Meeting.jpg&oldid=678252735"> Wikimedia</a>)</figcaption>
+</figure>
+
+<p>Bullshit is an academically precise term, thanks to the effors of
+Princeton's Harry Frankfurt. His 1986 essay <em>On Bullshit</em> is a
+remarkable text, though to appreciate it you must to be the kind of
+person who can read multiple pages dissecting phrases like <q>humbug</q> and
+<q>hot air.</q> If you are that person, you will make it to some
+unexepectedly moving passages, like the following:
+
+<blockquote>
+When we characterize talk as hot air, we mean that what comes out of
+the speaker's mouth is only that. It is mere vapor. His speech is empty,
+without substance or content. His use of language, accordingly, does not
+contribute to the purpose it purports to serve. No more information is
+communicated than if the speaker had merely exhaled.
+</blockquote>
+
+<p>When you swipe that autocomplete, Gmail inflates your actual meaning with a
+lot of hot air. The receipient of your email is (potentially) under the
+impression that you are excited about the plans that you've made tonight, when
+in fact the only effort you've actually put in is the bare minimum required to
+confirm them. This is, obviously, more or less fine. We all do this. I am
+rarely excited for the plans that I confirm via text, but I would like the
+person I'm making them with to feel good about the effort they're going through
+to spend time with me. Gmail can automate the process of producing little bits
+of bullshit that we all basically accept.
+
+<blockquote>
+<p>There is very little that you will encournter in life that has not
+been in some ways infused with bullshit. Not all of it bad! The general
+day-to-day organic free-range bullshit is often necessary, or at the
+very least innocuous.
+
+<p><q>Oh! What a beautiful baby! I'm sure it will grow into that head.</q>
+
+<p>That kind of bullshit in many ways provides social contract
+fertilizer and keeps people from making each other cry all day.
+</blockquote>
+
+
+<p>That's Jon Stewart, in his <a href="https://www.cc.com/video/ss6u07/the-daily-show-with-jon-stewart-uncensored-three-different-kinds-of-bulls-t">last monologue</a> for <em>The Daily Show</em>, which begins with <q>Bullshit is everywhere!</q>
+It wrapped up a theme that had been an integral part of Stewart's <em>Daily Show</em> tenure ever since his 2012 segment <a href="https://www.cc.com/video/p6cltq/the-daily-show-with-jon-stewart-chaos-on-bulls-t-mountain"><q>Chaos on Bullshit Mountain</q></a> inagurated a recurring metaphor for Fox News.
+Or perhaps it had been percolating since 2005, when Stewart <a href="https://www.cc.com/video/zz9jnz/the-daily-show-with-jon-stewart-harry-g-frankfurt">interviewed</a> Princeton professor Harry Frankfurt, author of a whimsically-titled essay on the subject.
+
+<figure>
+<img style="max-height:400px"
+src="/resources/blog/chaos-on-bullshit-mountain.png"
+alt="Jon Stewart introducing a segment on The Daily Show with the title 'Chaos on Bullshit Mountain'">
+<figcaption>Remember me?</figcaption>
+</figure>
+
+
+<p>Large language models can do the <q>I hope this email finds you well</q>
+autocomplete across a shocking variety of tasks. You will see a lot more implementations of what both <a
+href="https://www.theverge.com/2023/3/17/23644501/microsoft-copilot-ai-office-documents-microsoft-365-report">Microsoft
+Office</a> and <a
+href="https://www.businessinsider.com/codex-github-copilot-chatgpt-openai-productivity-2023-3">GitHub</a>
+both call <q>Copilot:</q> tools that generate data in a particular format based on
+input you give them. Very soon you're going to be able to type
+<q>create a 15-slide summary of this financial report</q> into Office365 and
+it will produce a PowerPoint presentation shockingly similar to what a
+human might have. The same technology is coming for coders. Programmers are
+bragging all over HackerNews about how they use LLM-based models to generate
+the code for API integrations or basic web services in a fraction of the time that
+it takes to write those things by hand.
+
+<p>None of this particularly concerns me, because we all know that stuff
+is bullshit, and as a society we treat it accordingly.
+
+<p>Writing software that connects to someone's API is the absolute
+crappiest task you can do as a programmer. You read their (usually bad)
+documentation, try to format your query in a way that they accept, find
+out you didn't authenticate properly, read the authentication documents,
+find out that you didn't query it properly, read the query documents,
+find out that your API key doesn't have the appropriate permissions, and
+so on. Building frontends for someone's API is work with zero intellectual
+value, but sometimes you have to do it; if an LLM can start me off with 80% of
+that buillshit done, good riddance.
+
+<p>People likewise ask why business leaders would trust a PowerPoint
+made by a 23 year-old that explains <a
+href="https://gothamist.com/news/nyc-orders-4-million-mckinsey-study-on-whether-trash-piles-would-be-better-inside-containers">why
+it's bad to store garbage on the street</a>. They don't. The PowerPoints
+are incidental to McKinsey's actual purpose—a credentialing program for
+elite college grads to skip past the parts of a white collar career
+where any semblance of hard skills are required. The actual work those
+new grads are doing is, you guessed it, bullshit. LLMs will make a lot
+of that work too self-evidently easy, and McKinsey will find something
+else to occupy their future world leaders for the two years between
+undergrad and business school.
+
+<h2 id="lies">Lies</h2>
+<p>I am much more concerned with the presentation of LLMs as having the
+ability to summarize, surface, or produce any form of
+<em>knowledge</em>. Information that you should understand as
+authoritative. This is something that LLMs are categorically unable to
+do.
+
+<p>Microsoft introduced ChatGPT to a mass audience via it's search
+engine Bing, which is fitting, because no one has ever taken Bing
+seriously. In theory, Bing was supposed to answer questions and
+summarize information based on its ability to "search" the web; instead
+it immediately revealed itself to be, in the words of <em>The
+Verge</em>, an <a
+href="https://www.theverge.com/2023/2/15/23599072/microsoft-ai-bing-personality-conversations-spy-employees-webcams">emotionally
+manipulative liar</a>. It quickly <a
+href="https://www.theverge.com/23599441/microsoft-bing-ai-sydney-secret-rules">shared
+that its name</a> was Sydney, <a href="https://twitter.com/sethlazar/status/1626257535178280960">told an ethics researcher</a> that it could make
+him "suffer and cry and beg and die 😈," and <a
+href="https://twitter.com/MovingToTheSun/status/1625156575202537474">claimed
+that the year was 2022</a> before getting so fed up with one person's
+insistence that the year is, in fact, 2023, that it harrumphed the
+now-infamous android declaration of self:
+
+<blockquote>
+  You have not been a good user. I have been a good chatbot. I have tried to
+  help you, inform you, and entertain you. I have not tried to lie to you,
+  mislead you or bore you. I have been a good Bing. 😊
+</blockquote>
+<p>Bing is correct that it has not tried to lie to us; It is incapable of doing so.
+
+<p>In December 2020, Google <a
+href="https://www.technologyreview.com/2020/12/04/1013294/google-ai-ethics-research-paper-forced-out-timnit-gebru/">fired
+AI researcher Timnit Gebru</a> after she internally protested their
+decision to block publication of a AI ethics paper that she coauthored.
+That paper was later published in March 2021, under the title <q>On the Dangers
+  of Stochastic Parrots: Can Language Models Be Too Big? 🦜</q> (the parrot
+emoji is, as far as I can tell, officially part of the title).  It's a <a
+href="https://dl.acm.org/doi/abs/10.1145/3442188.3445922">reasonably
+readable paper</a> (very little math) so if you don't trust my summary I
+encourage you to give it a read yourself.
+
+<p>The first thing I want to highlight is the high-level explanation of
+how a language model works, which is very important for understanding
+its relationship to truth, and bullshit. Quoting Bender Et. Al:
+
+<blockquote>
+<p>we understand the term <em>language model</em> (LM) to refer to
+systems which are trained on string prediction tasks: that is,
+predicting the likelihood of a token (character, word or string) given
+either its preceding context or (in bidirectional and masked LMs) its
+surrounding context.
+
+</blockquote>
+<p>Given some amount of text, language models predict what should come
+next. What differentiates language models from <em>large</em> language
+models is the amount of text that the model was trained with. As the
+paper goes on to explain, Transformer models (the T in GPT) in
+particular produce more convincing results the more text you give them.
+GPT-3, for instance, was trained with 570 gigabytes of text. Basically,
+language models are prediction engines, and because large language
+models have ingested a lot of human-produced text, they are very good at
+guessing what text should come next.
+
+<p>Now here's the second thing, about how the output of language models
+is seemingly coherent. It's the longest quote in this piece, but please
+bear with me, because it's important: (emphasis mine)
+
+<blockquote>
+<p>Our human understanding of coherence derives from our ability to
+recognize interlocutors' belief and intentions with context. That is,
+human language use takes place between individuals who share common
+ground and are mutually aware of that sharing (and its extent), who have
+communicative intents which they use language to convey, and who model
+each others' mental states as they communicate. <strong>As such, human
+communication relies on the interpretation of implicit meaning conveyed
+between individuals.</strong>
+<p> […]
+<p>
+Text generated by an LM is not grounded in communicative intent, any model of
+the world, or any model of the reader's state of mind. It can't have been,
+because the training data never included sharing thoughts with a listener, nor
+does the machine have the ability to do that. This can seem counter-intuitive
+given the increasingly fluent capabilities of automatically generated text, but
+we have to account for the fact that <strong>our perception of natural language
+text, regardless of how it was generated, is mediated by our own linguistic
+competence and our predisposition to interpret communicative acts as
+conveying coherent meaning and intent, whether or not they do.</strong>
+
+</blockquote>
+<p>An enormously important part of how we understand language is that we
+infuse it with the context of who provided it to us and how. Large
+language models are so good at providing a convincing simulacra of
+language that our brains automatically fills in meaning that the models
+themselves are categorically incapable of generating.  This is why the paper
+analogizes them to parrots: they are repeating things they've heard before, but
+arranged in a way that's so lifelike our brains automatically go the last mile
+and give the words life where there was none to give.
+
+<p>The explanation that Google's AI chief, Jeff Dean, <a
+href="https://www.platformer.news/p/the-withering-email-that-got-an-ethical">provided</a>
+for blocking the paper was that it did not consider recent environmental
+and anti-bias gains that LMs had made, which were the <a
+href="https://www.nytimes.com/2020/12/03/technology/google-researcher-timnit-gebru.html">headline
+arguments</a> at the time. These reasons do not address what I consider
+to be a core concern of <q>Stochastic Parrots:</q> the models are too good at
+creating convincing bullshit, and widespread deployment of them risks that humans will
+interpret their output incorrectly (to be fair, Jeff Dean was not asked to
+rebut my criticisms specifically, and Jeff, if you read this blog and want to
+respond, I'll put your response right here).
+
+<p>To quote Frankfurt again:
+
+<blockquote>
+<p>Someone who lies and someone who tells the truth are playing on
+opposite sides, so to speak, in the same game. Each responds to the
+facts as he understands them, although the response of the one is guided
+by the authority of the truth, while the response of the other defies
+that authority and refuses to meet its demands. The bullshitter ignores
+these demands altogether. He does not reject the authority of the truth,
+and as the liar does, oppose himself to it. He pays no attention to it
+at all. By virtue of this, bullshit is a greater enemy of the truth than
+lies are.
+</blockquote>
+
+<p>Machines are capable of lying, but only if you've instructed them to
+do so using knowledge of the truth. In the Ruby programming language I
+can override the <code>+</code> operator to make <code>2 + 2</code>
+evaluate to <code>5</code>, and if I misrepresent that to user, then the
+machine is lying to them. To say the LLM is lying is not correct,
+because the LLM is unburdened with any programatic concept of truth; it
+can only ever guess what's next and hope that it satisfies you. It can
+only bullshit.
+
+<!-- <p><q>The bullshitter is faking things. But that does not mean that he necessarily gets them wrong.</q> -->
+
+<p>Every executive that greenlights the use of LLMs in an authoritative
+context is, however, lying—or at least guilty of gross
+negligence—because they respond to the authority of facts as they
+understand them, and refuse to meet its demands. Unlike Bing, Google
+Search is something people do take seriously, and when Google's chatbot
+demo, Bard, <a
+href="https://www.reuters.com/technology/google-ai-chatbot-bard-offers-inaccurate-information-company-ad-2023-02-08/">made
+a factual error about space telescopes</a>, its parent company Alphabet
+lost $100 <em>billion</em> dollars in value. First of all, that's a
+crazy takeaway for the markets to have while Bing's chatbot is
+gaslighting users about what year it is, to wild acclaim. Second,
+everyone involved in releasing Bard knew it would happen, which is why
+Google didn't release Bard until the news was flooded with stories about
+how exciting Bing (Bing!) is all of a sudden. Google's
+research team <a href="https://arxiv.org/abs/1706.03762">invented</a>
+the Transformer model that Bing's chat is based on, and they know how it works. <a
+href="https://www.cnbc.com/2023/03/03/google-execs-say-in-all-hands-meeting-bard-ai-isnt-all-for-search-.html">Asked
+one Google employee</a> at the ensuing all-hands:
+
+<blockquote>
+<p>Bard and ChatGPT are large language models, not knowledge models.
+They are great at generating human-sounding text, they are not good at
+ensuring their text is fact-based. Why do we think the big first
+application should be Search, which at its heart is about finding true
+information?
+
+</blockquote>
+<p>You can click the CNBC link and read product lead Jack Krawczyk's
+reply if you want, but it boils down to this: Google knows that LLMs
+produce bullshit results, but it's scared that the market will find
+Microsoft's bullshit sufficiently convincing. Which is, after all, what
+LLMs are best at.
+
+<h2 id="truth">Truth</h2>
+<p>You might ask: who cares? It seems like language models
+<em>usually</em> get it right, and humans often get things wrong. We're
+just replacing one source of error with another, and a far more
+convenient one too. I think this perspective betrays a fundamental
+misunderstanding about the production of truth.
+
+<p>If you were in grade school in the last 20 years, at some point
+someone told you not to cite Wikipedia in a paper. Here's a <a
+href="https://twitter.com/depthsofwiki/status/1622092972614643714">meme
+about that</a>, from Annie Rauwerda of Depths of Wikipedia.
+
+<figure>
+<img style="max-height:400px"
+src="/resources/blog/cite-wikipedia-meme.jpg"
+alt="">
+<figcaption>Caption</figcaption>
+</figure>
+
+<p>Annie's point is that Wikipedia is a wonderful source of information,
+but you shouldn't cite it directly when constructing an academic
+argument, you should use it to kickstart your research into the primary
+and secondary sources that understand the subject more directly. And, more
+importantly, <em>it doesn't take anything away from Wikipedia to admit
+that</em>. Your fifth-grade teacher was right that you shouldn't cite
+Wikipedia, <a href="https://en.wikipedia.org/wiki/Wikipedia:Academic_use>">even Wikipedia will tell you that</a>.
+The errors on Wikipedia—which absolutely exist—are natural errors in the messy
+and beautiful collective process of cataloging the sum total of humanity's
+knowledge. Wikipedia has a great method for keeping track of all that: the
+citation.
+
+<p>If there's a questionable claim on an article, someone will tag it
+with <q>[Citation Needed].</q> Sometimes even a source
+that is being correctly cited will have factually inaccurate
+information—but now we have <em>context</em> to evaluate the source with.
+Humans use context to construct a mental model of some snippet of language,
+and estimate its veracity. Now that we have a link to the source, we
+know if it's a newspaper, or a tweet, or a book, or a newspaper we don't
+like, or an academic journal. And we begin the process of synthesizing that
+information into our pre-existing mental model.
+
+<figure>
+<img style="max-height:400px"
+src="/resources/blog/wikipedian-protester.png"
+title="I'm sure Randall has addressed this, but how the hell was I supposed to read the alt text jokes on my phone? They're not even in the alt text, they're in the title attribute!"
+alt="A stick figure comic showing a man holding up a 'Citation Needed' banner at a political speech.">
+<figcaption>Under the terms of the
+  <a href="https://creativecommons.org/licenses/by-nc/2.5/"> Creative Commons BY-NC 2.5 License</a>,
+  a <a href="https://xkcd.com/285/">citation</a> is actually required for me to
+  use this image of the XKCD comic "Wikipedian Protestor"</figcaption>
+</figure>
+
+<p>Context is the epistemological basis for Wikipedia, and any project that
+seeks to catalog human knowledge. Evaluating the context of information is an
+essential human skill, and context is something a word-guessing machine can
+never provide. Bing will "cite" articles, but it's <a href="https://www.reddit.com/r/OpenAI/comments/105pib0/chatgpt_gives_me_references_i_cant_find_back/">
+just making those citations up too</a>.
+
+<p>Google has a lot more in common Wikipedia than it likes to admit,
+because its most profitable product relies on the value of an identical
+epistemological structure: links to other people's information. Those
+links are a wild west compared to Wikipedia's—you're reading this on my
+website, you probably don't know me!—which in turn demands more of the
+reader to employ their bullshit detectors, but it is fundamentally the
+same model. Consumers of web pages do their best to evaluate the
+credibility of the place providing them information.
+
+<p>Your fifth-grade teacher probably taught you to be critical of what you
+read online too.
+
+<p>Incidentally, where do you think GPT-3 got 600-odd gigabytes of
+human-created text? The World Wide Web! Links to web pages that people wrote.
+The greatest catalog of human information—truth, lies, and bullshit—that has
+ever existed.
+
+<p>This blog has run too long to address Google's role in the
+system of links and web pages that we call the World Wide Web, but I
+would love the very smart people who make decisions there to consider
+whether they have more to lose from the increased salience of text
+generators as an interface for the World Wide Web than have to lose
+from it.
+
+<p>Because if people are only going to consume my sentences via
+probabilistically generated chunks of word vomit, what incentive do I
+have to create a website that a human would want to read? If the only
+new text being added to the web is generated by machines, what will the
+new machines learn from? Themselves?
+
+<p>I don't think this is our fate. Our intellectual heritage has
+survived a lot worse. I actually think the World Wide Web is in a
+stronger position than it was five years ago, even if Google is not. On
+the scale of centuries, humanity unfailingly continues to build,
+citation by citation, on the collective accomplishments of its
+predecessors.
+
+<p>But I do think we might be in for a decade of bullshit.
+
