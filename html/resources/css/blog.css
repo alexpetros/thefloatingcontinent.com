@@ -1,6 +1,6 @@
 body {
+  margin-top: 50px;
   font-size: 18px;
-  margin: 0 auto;
   max-width: 760px;
 }
 
@@ -9,6 +9,7 @@ h1 {
 }
 
 figure {
+  margin: 5% 0;
   text-align: center;
 }
 
@@ -18,7 +19,7 @@ code {
 }
 
 figcaption {
-  font-size: .9em;
+  font-size: .8em;
   color: gray;
 }
 
@@ -63,11 +64,9 @@ blockquote p:last-child {
   font-style: italic;
 }
 
-@media only screen and (max-width: 800px) {
-  body {
-    margin-top: 50px;
-    margin-left: 5%;
-    margin-right: 5%;
+@media only screen and (min-width: 800px) {
+  figcaption {
+    font-size: 0.9em;
   }
 }
 

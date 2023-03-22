@@ -6,8 +6,9 @@
 }
 
 html {
-  font-family: 'open_sansregular', sans-serif;
   color: black;
+  font-family: 'open_sansregular', sans-serif;
+  padding: 10px;
 }
 
 body {
