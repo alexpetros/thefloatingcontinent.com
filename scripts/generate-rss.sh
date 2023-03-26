@@ -9,7 +9,6 @@
 # baked in here, but the main assumptions are:
 #   a) It uses the MacOS flavor of the `date` command
 #   b) The post contains a `time` element with the "pubdate" class in format "YYYY-MM-DD"
-#   c) The first <h1> element is the title of the post
 # Everything else is pretty standard. RSS is... really simple!
 
 set -eu
@@ -41,7 +40,7 @@ sortedFilenames=$(echo "$filenames" | sort -nr | cut -d ' ' -f 2)
 
 # For each file (now sorted reverse chronologically), build the item element
 for post in $sortedFilenames; do
-  title=$(grep 'h1' "$post" | head -1 | sed -E 's/<\/?h1>//g')
+  title=$(grep 'title' "$post" | head -1 | sed -E 's/<\/?title>//g')
   filename=$(basename "$post")
   slug=${filename%.html}
   url="$DOMAIN/blog/$slug"
