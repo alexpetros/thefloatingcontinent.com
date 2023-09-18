@@ -14,17 +14,6 @@ main a:hover {
   text-decoration-color: #498FE6;
 }
 
-body ul {
-  padding: 0px;
-  list-style-type: none;
-}
-
-body li {
-  margin-left: 0px;
-  margin-bottom: 7px;
-  list-style-type: none;
-}
-
 h3 {
   font-weight: normal;
   margin-bottom: 0;

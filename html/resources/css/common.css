@@ -1,3 +1,7 @@
+:root {
+  --blue-accent: #498FE6;
+}
+
 @font-face {
   font-family: 'open_sansregular';
   src: url('/resources/fonts/OpenSans-Regular-webfont.woff') format('woff');
@@ -8,13 +12,57 @@
 html {
   color: black;
   font-family: 'open_sansregular', sans-serif;
-  padding: 10px;
 }
 
 body {
-  margin: 10px auto;
-  padding: 12px;
+  margin: 0 auto;
   max-width: 900px;
+}
+
+main {
+  padding: 0 1em;
+}
+
+.site-head {
+  padding: 1em 0;
+}
+
+.site-head .website-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.site-head .website-title img {
+  margin-right: 1em;
+}
+
+.site-head nav {
+  background-color: var(--blue-accent);
+  padding: 0 1em;
+}
+
+.site-head ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: .5em;
+  list-style: none;
+}
+
+.site-head li {
+  color: white;
+  margin-right: 1em;
+}
+
+.site-head a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-head a:visited {
+  color: white;
 }
 
 img {
@@ -30,7 +78,7 @@ h1 {
   font-size: 2em;
 }
 
-header h1, header h2{
+header h1, header h2 {
   margin: 0px;
 }
 
@@ -38,26 +86,15 @@ header p {
   font-size: large;
 }
 
-nav ul {
-  margin: 0px;
-  padding: 0px;
-  list-style-type: none;
-}
-
-nav li {
-  margin-bottom: 7px;
-}
-
-
 h1, h2, h3, .author {
-  color: #498FE6;
+  color: var(--blue-accent);
 }
 
 a {
   color: black;
   text-underline-offset: 5px;
   text-decoration-thickness: 2px;
-  text-decoration-color: #498FE6;
+  text-decoration-color: var(--blue-accent);
 }
 
 a:visited {
