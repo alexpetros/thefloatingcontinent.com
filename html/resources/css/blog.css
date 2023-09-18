@@ -18,7 +18,6 @@ code {
 }
 
 figcaption {
-  font-size: .8em;
   color: gray;
 }
 
@@ -61,11 +60,5 @@ blockquote p:last-child {
 
 .book-title, .postscript {
   font-style: italic;
-}
-
-@media only screen and (min-width: 800px) {
-  figcaption {
-    font-size: 0.9em;
-  }
 }
 
