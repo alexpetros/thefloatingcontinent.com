@@ -9,6 +9,7 @@
   font-style: normal;
 }
 
+/* Basic element styles */
 html {
   color: black;
   font-family: 'open_sansregular', sans-serif;
@@ -23,6 +24,43 @@ main {
   padding: 0 1em;
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+hr {
+  color: lightgray;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+header h1, header h2 {
+  margin: 0px;
+}
+
+header p {
+  font-size: large;
+}
+
+h1, h2, h3, .author {
+  color: var(--blue-accent);
+}
+
+a {
+  color: black;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--blue-accent);
+}
+
+a:visited {
+  color: black;
+}
+
+/* Site header stlyes */
 .site-head {
   padding: 1em 0;
 }
@@ -65,38 +103,19 @@ main {
   color: white;
 }
 
-img {
-  max-width: 100%;
-  max-height: 100%;
+/* Styles for the places where I list blog posts */
+.blog-list ul {
+  padding-left: 15px;
 }
 
-hr {
-  color: lightgray;
+.blog-date {
+  color: darkgray;
 }
 
-h1 {
-  font-size: 2em;
+@media only screen and (min-width: 800px) {
+  .blog-list span {
+    float: right;
+  }
 }
 
-header h1, header h2 {
-  margin: 0px;
-}
 
-header p {
-  font-size: large;
-}
-
-h1, h2, h3, .author {
-  color: var(--blue-accent);
-}
-
-a {
-  color: black;
-  text-underline-offset: 5px;
-  text-decoration-thickness: 2px;
-  text-decoration-color: var(--blue-accent);
-}
-
-a:visited {
-  color: black;
-}
