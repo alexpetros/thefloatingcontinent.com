@@ -7,9 +7,9 @@ BEGIN { FS="===" }
   first_slash = match($2, "/")
   name = substr($2, first_slash + 1)
   gsub(/ *$/, "", name)
-  path = tolower(name)
+  path = tolower(name)".txt"
   gsub(/ /, "-", path)
-  print "<a href=\""path"\">"name"</a>"
+  print "<a href=\"/pokemon/tpl-s3/"path"\">"name"</a>"
 }
 
 path {
