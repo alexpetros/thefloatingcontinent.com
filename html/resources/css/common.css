@@ -13,6 +13,8 @@
 html {
   color: black;
   font-family: 'open_sansregular', sans-serif;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
 }
 
 body {
