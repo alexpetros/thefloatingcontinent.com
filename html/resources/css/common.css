@@ -22,6 +22,10 @@ body {
   max-width: 900px;
 }
 
+footer {
+  padding: 0 1em;
+}
+
 main {
   padding: 0 1em;
 }
