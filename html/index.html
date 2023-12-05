@@ -6,6 +6,34 @@
 <link rel="stylesheet" href="/resources/css/index.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The Floating Continent, a website by Alex Petros.">
+<style>
+
+main a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #498FE6;
+}
+
+.logo {
+  height: 32px;
+  width: 32px;
+  margin: 5px;
+}
+
+.two-col {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.two-col > div:first-child { max-width: 500px; }
+
+footer {
+  margin-top: 60px;
+}
+</style>
 
 <header class=site-head>
 <a href="/" class=website-title>
@@ -22,8 +50,21 @@
 </header>
 
 <main>
-<section>
-I'm Alex Petros, and this is my blog.
+
+<section class=two-col>
+  <div>
+    <p>I'm Alex Petros, and this is my website!
+    <ul>
+      <li>I'm a Core Maintainer for <a href="https://htmx.org/">htmx</a>, a
+        <a href="https://star-history.com/#bigskysoftware/htmx&Date">rapidly-growing</a> JavaScript
+        library that extends the basic principles of HTML to network requests
+      <li>My friend <a href="">Morry</a> and I make internet art projects as the collective
+        <a href="https://wemakeinter.net/">We Make Internet</a>
+      <li>I build software infrastructure for non-software companies, with architectures that can
+        last for years with very little maintenance. You can hire me to do this for you too.
+    </ul>
+  </div>
+  <div><img src="/resources/images/boygenius-concert.jpg" height=300 alt=""></div>
 </section>
 
 <section class="blog-list">
@@ -46,6 +87,7 @@ I'm Alex Petros, and this is my blog.
     <span class="blog-date">(May 25, 2022)</span>
   </li>
 </ul>
+<a href=/blog>More blogs</a>
 </section>
 
 <section>
