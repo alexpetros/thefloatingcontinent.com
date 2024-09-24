@@ -11,3 +11,7 @@ validate:
 .PHONY: rss
 rss:
 	./scripts/generate-rss.sh > html/rss.xml
+
+.PHONY: deploy
+deploy:
+	ssh mrg 'cd /var/www/thefloatingcontinent.com && git pull'

@@ -62,3 +62,27 @@ blockquote p:last-child {
   font-style: italic;
 }
 
+aside {
+  border: 2px dashed var(--blue-accent);
+  background-color: rgba(73, 143, 230, .1);
+  padding: 0 10px;
+  margin: 0 10px;
+
+  h2 {
+    color: black;
+  }
+}
+
+cite.article {
+  font-style: normal;
+
+  &:before {
+    content: '“'
+  }
+
+  &:after {
+    content: '”'
+  }
+}
+
+
